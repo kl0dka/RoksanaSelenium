@@ -19,7 +19,7 @@ public class HomePage extends BasePage {
         click(cookiesAcceptButton);
     }
 
-    public void goToRawMaterials() {
+    public void goToSurowce() {
         hoverElement(navBarElementRynki);
         click(listElementSurowce);
     }

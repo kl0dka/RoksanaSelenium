@@ -1,27 +1,27 @@
-package base;
+package part3StepDef;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import org.example.pages.BasePage;
 import org.example.pages.HomePage;
-import org.example.pages.RawMaterialsPage;
+import org.example.pages.SurowcePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 
 import java.time.Duration;
 
 public class BaseTest {
-    protected WebDriver driver;
-    protected Actions actions;
-    protected WebDriverWait wait;
-    protected BasePage basePage;
-    protected HomePage homePage;
-    protected RawMaterialsPage rawMaterialsPage;
+    public static WebDriver driver;
+    public static Actions actions;
+    public static WebDriverWait wait;
+    public static BasePage basePage;
+    public static HomePage homePage;
+    public static SurowcePage surowcePage;
     private String url = "https://www.bankier.pl/";
 
-    @BeforeClass
+    @Before
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -30,10 +30,10 @@ public class BaseTest {
         wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         basePage = new BasePage(driver, wait, actions);
         homePage = new HomePage(driver, wait, actions);
-        rawMaterialsPage = new RawMaterialsPage(driver, wait, actions);
+        surowcePage = new SurowcePage(driver, wait, actions);
     }
 
-    @AfterClass
+    @After
     public void tearDown() {
         driver.quit();
     }

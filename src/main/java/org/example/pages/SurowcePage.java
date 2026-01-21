@@ -5,17 +5,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class RawMaterialsPage extends BasePage {
+public class SurowcePage extends BasePage {
     By goldElement = By.xpath("//div[contains(@title, 'Złoto')]//div//span[contains(@class, 'a-quote-item -value')]");
     By goldElementCard = By.xpath("//div[contains(@title, 'Złoto')]");
-    By rawMaterialsTab = By.xpath("//li[text() = 'Surowce']");
+    By surowceTab = By.xpath("//li[text() = 'Surowce']");
 
-    public RawMaterialsPage(WebDriver driver, WebDriverWait wait, Actions actions) {
+    public SurowcePage(WebDriver driver, WebDriverWait wait, Actions actions) {
         super(driver, wait, actions);
     }
 
     public boolean isPageVisible() {
-       return find(rawMaterialsTab).isDisplayed();
+        return find(surowceTab).isDisplayed();
     }
 
     public boolean isGoldElementVisible() {
